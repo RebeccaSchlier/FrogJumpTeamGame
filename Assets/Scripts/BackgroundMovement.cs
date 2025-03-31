@@ -59,7 +59,7 @@ public class BackgroundMovement : MonoBehaviour
         }
 
         //Repeat background
-        if ((transform.position.x)*screenLengthMultiplier < startPos.x - repeatWidth)
+        if ((transform.position.x)*screenLengthMultiplier < startPos.x - repeatWidth && gameManager.isGameActive == true)
         {
             transform.position = startPos;
         }

@@ -12,8 +12,8 @@ public class Projectiles : MonoBehaviour
     private float minSpeed;
     private float maxSpeed;
     private float maxTorque;
-    private float xRange;
-    private float ySpawnPos;
+    private float yRange;
+    private float xPos;
     private GameManager gameManager;
     public int pointValue;
     public ParticleSystem explosionParticle;
@@ -28,14 +28,13 @@ public class Projectiles : MonoBehaviour
         minSpeed = 12;
         maxSpeed = 16;
         maxTorque = 10;
-        xRange = 4;
-        ySpawnPos = -6;
+        xPos = 100;
+        yRange = 3;
         lifeCount = 3;
 
         //reg code
         targetRb = GetComponent<Rigidbody2D>();
-        targetRb.AddForce (RandomForce(),ForceMode.Impulse);
-        targetRb.AddTorque (RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
+        targetRb.AddForce (RandomForce(),ForceMode2D.Impulse);
         transform.position = RandomSpawnPos();
         gameManager = GameObject.Find ("GameManager").GetComponent<GameManager>();
        
@@ -49,15 +48,15 @@ public class Projectiles : MonoBehaviour
 
     Vector3 RandomForce()
     {
-        return Vector3.up * Random.Range(minSpeed, maxSpeed);
+        return Vector3.left * Random.Range(minSpeed, maxSpeed);
     }
     
 
-    }
+    
 
     Vector3 RandomSpawnPos()
     {
-        return new Vector3(Random.Range(-xRange, xRange), ySpawnPos);
+        return new Vector3(xPos,Random.Range(-yRange, yRange));
     }
 
     private void TongueOut()

@@ -7,10 +7,10 @@ public class BackgroundMovement : MonoBehaviour
     //background repeat
     private Vector3 startPos;
     private float repeatWidth;
-    
+    private float screenLengthMultiplier;
     
     public float speed;
-    private PlayerController playerControllerScript;
+    public PlayerController playerControllerScript;
     private float leftBound;
 
     // //Player movement and locations
@@ -25,13 +25,13 @@ public class BackgroundMovement : MonoBehaviour
     // private Vector3 backgroundMovement;
 
     // Start is called before the first frame update
-    void Start()
+    void StartGame()
     {
         startPos = transform.position;
         repeatWidth = GetComponent <BoxCollider>().size.x;
-
+        screenLengthMultiplier = 4.0f;
         
-        // playerControllerScript = GameObject.Find ("Player").GetComponent <PlayerController> ();
+        playerControllerScript = GameObject.Find ("PlayerControllerScript").GetComponent <PlayerController> ();
         
 
         // transformPosition1 = player1.transform.position + offset;
@@ -43,13 +43,13 @@ public class BackgroundMovement : MonoBehaviour
     {   
         //move background
 
-        //  if (playerControllerScript.gameOver == false)
-        // {
+         if (playerControllerScript.gameOver == false)
+        {
             transform.Translate (Vector3.left * Time.deltaTime * speed);
-        // }
+        }
 
         //Repeat background
-        if (transform.position.x < startPos.x - repeatWidth)
+        if ((transform.position.x)*screenLengthMultiplier < startPos.x - repeatWidth)
         {
             transform.position = startPos;
         }

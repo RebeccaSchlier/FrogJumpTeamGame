@@ -9,13 +9,14 @@ public class GameManager : MonoBehaviour
 {
     //declarations
     public List <GameObject> targets;
-    public Button restartButton;
+    // public Button restartButton;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
+    // public TextMeshProUGUI gameOverText;
     private int score;
     private float spawnRate = 1.0f;
     public bool isGameActive;
     public GameObject titleScreen;
+    public GameObject gameOverScreen;
     private int lifeCount;
     public TextMeshProUGUI lifeText;
 
@@ -24,12 +25,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // value definitions
-      
+      Cursor.visible = false;
     }
 
-    public void StartGame(int difficulty)
+    public void StartGame()
     {
-        spawnRate = spawnRate/difficulty;
+        spawnRate = 5;
         isGameActive = true;
         score = 0;
         
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ExitGame();
     }
 
     IEnumerator SpawnTarget()
@@ -67,9 +68,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         
-        gameOverText.gameObject.SetActive(true);
+        gameOverScreen.gameObject.SetActive(true);
         isGameActive = false;
-        restartButton.gameObject.SetActive(true);
+    
 
     }
 
@@ -89,5 +90,13 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
-
+    public void ExitGame()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape)) { 
+        // or if (Input.GetButtonUp("Cancel")) 
+        {
+	    Application.Quit();
+        }
+        }
     }
+}

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public GameObject titleScreen;
     public GameObject gameOverScreen;
+    public GameObject inGameScreen;
     private int lifeCount;
     public TextMeshProUGUI lifeText;
 
@@ -26,6 +27,12 @@ public class GameManager : MonoBehaviour
     {
         // value definitions
       Cursor.visible = false;
+      isGameActive = false;
+      titleScreen.gameObject.SetActive (true);
+      inGameScreen.gameObject.SetActive (false);
+    //   gameOverScreen.gameObject.SetActive (False);
+
+
     }
 
     public void StartGame()
@@ -39,6 +46,7 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
         UpdateLives(3);
         titleScreen.gameObject.SetActive(false);
+        inGameScreen.gameObject.SetActive(true);
     }
 
     // Update is called once per frame

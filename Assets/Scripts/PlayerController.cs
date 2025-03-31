@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mamaRb = GetComponent<Rigidbody2D>();
+        // mamaRb = GetComponent<Rigidbody2D>();
         // playerRb.AddForce(Vector3.up *1000);
        
         Physics.gravity *= gravityModifier;
@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
         // OnCollisionEnter(true);
 
         //Baby frog code
+        // if (babyFrog isOnGround)
         //right
         if (Input.GetKey(KeyCode.D))
         {

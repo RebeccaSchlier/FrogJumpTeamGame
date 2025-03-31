@@ -12,6 +12,7 @@ public class BackgroundMovement : MonoBehaviour
     public float speed;
     public PlayerController playerControllerScript;
     private float leftBound;
+    public GameManager gameManager;
 
     // //Player movement and locations
     // private Vector3 transformPosition1;
@@ -25,13 +26,22 @@ public class BackgroundMovement : MonoBehaviour
     // private Vector3 backgroundMovement;
 
     // Start is called before the first frame update
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent <GameManager>();
+        gameManager.isGameActive = false;
+    }
     void StartGame()
     {
-        startPos = transform.position;
-        repeatWidth = GetComponent <BoxCollider>().size.x;
-        screenLengthMultiplier = 4.0f;
+        if (gameManager.isGameActive == true)
+        {
+            startPos = transform.position;
+            repeatWidth = GetComponent <BoxCollider>().size.x;
+            screenLengthMultiplier = 4.0f;
         
-        playerControllerScript = GameObject.Find ("PlayerControllerScript").GetComponent <PlayerController> ();
+            playerControllerScript = GameObject.Find ("PlayerControllerScript").GetComponent <PlayerController> ();
+        
+        }
         
 
         // transformPosition1 = player1.transform.position + offset;
@@ -43,7 +53,7 @@ public class BackgroundMovement : MonoBehaviour
     {   
         //move background
 
-         if (playerControllerScript.gameOver == false)
+         if (playerControllerScript.gameOver == false && gameManager.isGameActive == true)
         {
             transform.Translate (Vector3.left * Time.deltaTime * speed);
         }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 987615227604705297}
   m_Layer: 0
   m_Name: FrogGamefly
-  m_TagString: Bad
+  m_TagString: Fly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 970b62d9249553740a02ba7da85116e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.009715826, y: 0.050133713}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad83bf3302f472cb155952d88d98fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointValue: 3
+  pointValue: 4
   lifeText: {fileID: 0}
 --- !u!114 &987615227604705297
 MonoBehaviour:

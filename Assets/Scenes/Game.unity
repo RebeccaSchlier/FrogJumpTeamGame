@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 143527504}
   - component: {fileID: 143527505}
   - component: {fileID: 143527507}
-  - component: {fileID: 143527506}
+  - component: {fileID: 143527508}
   m_Layer: 0
   m_Name: FrogGameSon
   m_TagString: Ground
@@ -334,26 +334,6 @@ PolygonCollider2D:
       - {x: 0.15819429, y: 0.058194287}
       - {x: 0.14043778, y: 0.07974616}
   m_UseDelaunayMesh: 0
---- !u!114 &143527506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143527502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33241781bd0618a449a9b6d3332da01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  mamaRb: {fileID: 530166927}
-  babyRb: {fileID: 143527507}
-  jumpForce: 0.25
-  gravityModifier: 1
-  isOnGround: 0
-  gameManager: {fileID: 847726891}
-  gameOver: 0
 --- !u!50 &143527507
 Rigidbody2D:
   serializedVersion: 4
@@ -379,8 +359,27 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &143527508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143527502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0f72dc23778e64da46337bdbea5778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  babyRb: {fileID: 143527507}
+  jumpForce: 5
+  gravityModifier: 1
+  isOnGround: 0
+  gameManager: {fileID: 847726891}
+  gameOver: 0
 --- !u!1 &333057442
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +405,7 @@ Transform:
   m_GameObject: {fileID: 333057442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.593896, y: -1.617361, z: 0.06888742}
+  m_LocalPosition: {x: -3.593896, y: -2.247, z: 0.06888742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -799,7 +798,7 @@ GameObject:
   - component: {fileID: 530166924}
   - component: {fileID: 530166925}
   - component: {fileID: 530166927}
-  - component: {fileID: 530166926}
+  - component: {fileID: 530166928}
   m_Layer: 0
   m_Name: FrogGameMom (1)
   m_TagString: Untagged
@@ -862,7 +861,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 212fd92b2b6190140b011aab366bd444, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -919,36 +918,16 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.112300634, y: 0.01420562}
-      - {x: -0.008849859, y: 0.0021450594}
-      - {x: -0.22386098, y: 0.021601424}
+      - {x: -0.0033242702, y: 0.011354752}
+      - {x: -0.21465135, y: 0.0142336935}
       - {x: -0.21410033, y: -0.07592865}
       - {x: -0.21292812, y: -0.17496124}
       - {x: -0.17821002, y: -0.20723748}
       - {x: -0.117889345, y: -0.21178998}
       - {x: 0.17382309, y: -0.19357996}
-      - {x: 0.18748061, y: 0.041788563}
-      - {x: 0.18259604, y: 0.09052287}
+      - {x: 0.18379657, y: 0.014159486}
+      - {x: 0.16049273, y: 0.013161346}
   m_UseDelaunayMesh: 0
---- !u!114 &530166926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530166922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33241781bd0618a449a9b6d3332da01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  mamaRb: {fileID: 530166927}
-  babyRb: {fileID: 143527507}
-  jumpForce: 1
-  gravityModifier: 1
-  isOnGround: 0
-  gameManager: {fileID: 847726891}
-  gameOver: 0
 --- !u!50 &530166927
 Rigidbody2D:
   serializedVersion: 4
@@ -974,8 +953,27 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &530166928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530166922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce8a9e3a60fc2343af78b99fb0e667c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  mamaRb: {fileID: 530166927}
+  jumpForce: 3
+  gravityModifier: 1
+  isOnGround: 0
+  gameManager: {fileID: 847726891}
+  gameOver: 0
 --- !u!1 &532129440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,8 +1078,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - {fileID: 7891202711702425350, guid: 53f40ee4f92c247f9aa6173677de71f7, type: 3}
-  - {fileID: 7891202711702425350, guid: 53f40ee4f92c247f9aa6173677de71f7, type: 3}
+  - {fileID: 8391783147705435023, guid: 5be36fa3b95e3448fa94d94f71175df4, type: 3}
+  - {fileID: 1549348002500364757, guid: 38361506f2eee4a6790b28a9892d8ac0, type: 3}
   scoreText: {fileID: 1008727184}
   isGameActive: 0
   titleScreen: {fileID: 958261670}
@@ -1532,7 +1530,7 @@ Transform:
   m_GameObject: {fileID: 1219481002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3627, y: -0.83, z: 0}
+  m_LocalPosition: {x: 2.3627, y: -1.4596391, z: 0}
   m_LocalScale: {x: 32.371323, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2049,8 +2047,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  mamaRb: {fileID: 0}
-  babyRb: {fileID: 0}
   jumpForce: 0
   gravityModifier: 0
   isOnGround: 0
@@ -2101,8 +2097,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  mamaRb: {fileID: 530166927}
-  babyRb: {fileID: 143527507}
   jumpForce: 0
   gravityModifier: 1
   isOnGround: 0

@@ -5,9 +5,10 @@ using UnityEngine;
 public class FlySpawnManager : MonoBehaviour
 {
     public GameObject[] flyPrefabs;
-    private float spawnRangeX = 3f;
-    private float spawnMinY = -.5f;
-    private float spawnMaxY = 1.5f;
+  
+    private float spawnMaxX = -.6f;
+    private float spawnMinY = -1f;
+    private float spawnMaxY = 1.21f;
 
     private float startDelay = 2f;
     private float spawnInterval = 1.5f;
@@ -29,7 +30,7 @@ public class FlySpawnManager : MonoBehaviour
     {
         //randomly create an animal from the animalPrefabs 
         int flyIndex = Random.Range(0, flyPrefabs.Length);
-        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(spawnMinY, spawnMaxY), 0);
+        Vector3 spawnPos = new Vector3(spawnMaxX, Random.Range(spawnMinY, spawnMaxY), 0);
         Instantiate(flyPrefabs[flyIndex], spawnPos, flyPrefabs[flyIndex].transform.rotation);
     }
 }

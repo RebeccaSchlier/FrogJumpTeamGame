@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 2963314285573544499}
   - component: {fileID: 3354532998371019561}
   - component: {fileID: 8973011057732564389}
-  - component: {fileID: -5395504776353952337}
   - component: {fileID: 2074986625221402409}
   m_Layer: 0
   m_Name: FrogGameObstacle2
-  m_TagString: Bad
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: d8acf0cbbb737444daad69c8f913a46f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -167,20 +166,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5395504776353952337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549348002500364757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ad83bf3302f472cb155952d88d98fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointValue: 0
-  lifeText: {fileID: 0}
 --- !u!114 &2074986625221402409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549348002500364757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3386ff11c1d2047c1b27e655d208b2ad, type: 3}
   m_Name: 

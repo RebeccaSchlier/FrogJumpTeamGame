@@ -23,8 +23,8 @@ public class Projectiles : MonoBehaviour
     void Start()
     {
         //value definitions
-        minSpeed = 1f;
-        maxSpeed = 6f;
+        minSpeed = 1.5f;
+        maxSpeed = 3f;
         // maxTorque = 10;
         // xPos = 17;
         // yRange = 1;

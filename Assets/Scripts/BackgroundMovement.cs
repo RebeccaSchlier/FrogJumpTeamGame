@@ -7,7 +7,7 @@ public class BackgroundMovement : MonoBehaviour
     //background repeat
     private Vector3 startPos;
     private float repeatWidth;
-    private float screenLengthMultiplier;
+    public float screenLengthMultiplier;
     
     public float speed;
     public PlayerController playerControllerScript;
@@ -33,15 +33,15 @@ public class BackgroundMovement : MonoBehaviour
     }
     void StartGame()
     {
-        if (gameManager.isGameActive == true)
-        {
+        // if (gameManager.isGameActive == true)
+        // {
             startPos = transform.position;
-            repeatWidth = GetComponent <BoxCollider>().size.x;
-            screenLengthMultiplier = 4.0f;
+            repeatWidth = GetComponent <BoxCollider>().size.x/2;
+            // screenLengthMultiplier = 2.0f;
         
             playerControllerScript = GameObject.Find ("PlayerControllerScript").GetComponent <PlayerController> ();
         
-        }
+        // }
         
 
         // transformPosition1 = player1.transform.position + offset;
@@ -50,19 +50,22 @@ public class BackgroundMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        //move background
-
-         if (playerControllerScript.gameOver == false && gameManager.isGameActive == true)
+    {   if (gameManager.isGameActive == true)
         {
-            transform.Translate (Vector3.left * Time.deltaTime * speed);
-        }
+             //move background
+
+            if (playerControllerScript.gameOver == false)
+            {
+                transform.Translate (Vector3.left * Time.deltaTime * speed);
+            }
 
         //Repeat background
-        if ((transform.position.x)*screenLengthMultiplier < startPos.x - repeatWidth && gameManager.isGameActive == true)
-        {
-            transform.position = startPos;
+            if ((transform.position.x)*screenLengthMultiplier < startPos.x - repeatWidth)
+            {
+                transform.position = startPos;
+            }
         }
+       
 
     }
 

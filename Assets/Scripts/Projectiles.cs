@@ -28,8 +28,8 @@ public class Projectiles : MonoBehaviour
         minSpeed = 12;
         maxSpeed = 16;
         maxTorque = 10;
-        xPos = 100;
-        yRange = 3;
+        xPos = 17;
+        yRange = 1;
         lifeCount = 3;
 
         //reg code
@@ -62,9 +62,8 @@ public class Projectiles : MonoBehaviour
     private void TongueOut()
     {
         if (gameManager.isGameActive)
-        {
+        {if
             Destroy(gameObject);
-            Instantiate (explosionParticle, transform.position, explosionParticle.transform.rotation);
             gameManager.UpdateScore(pointValue);
 
             if (gameObject.CompareTag("Bad") && gameManager.isGameActive)
@@ -76,11 +75,11 @@ public class Projectiles : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter (Collider other)
-    {
-        Destroy(gameObject);
+    // private void OnTriggerEnter (Collider other)
+    // {
+    //     Destroy(gameObject);
        
-    }
+    // }
 
     public void UpdateLives ()
     {

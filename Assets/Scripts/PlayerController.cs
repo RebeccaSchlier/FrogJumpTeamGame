@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
       
         // doubleJumpUsed = false;
 
-        babyFrog = GameObject.Find("BabyFrog");
-        mamaFrog = GameObject.Find("mamaFrog");
+        babyFrog = GameObject.Find("FrogGameSon");
+        mamaFrog = GameObject.Find("FrogGameMom (1)");
     }
 
     // Update is called once per frame

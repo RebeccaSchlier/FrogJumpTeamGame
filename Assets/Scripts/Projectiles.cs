@@ -37,6 +37,7 @@ public class Projectiles : MonoBehaviour
         targetRb.AddForce (RandomForce(),ForceMode2D.Impulse);
         transform.position = RandomSpawnPos();
         gameManager = GameObject.Find ("GameManager").GetComponent<GameManager>();
+        TongueOut();
        
     }
 
@@ -62,8 +63,8 @@ public class Projectiles : MonoBehaviour
     private void TongueOut()
     {
         if (gameManager.isGameActive)
-        {if
-            Destroy(gameObject);
+        { if (Input.GetKey(KeyCode.Z))
+            {Destroy(gameObject);
             gameManager.UpdateScore(pointValue);
 
             if (gameObject.CompareTag("Bad") && gameManager.isGameActive)
@@ -71,7 +72,7 @@ public class Projectiles : MonoBehaviour
                 gameManager.UpdateLives(-1);
            
             } 
-
+            }
         }
     }
 

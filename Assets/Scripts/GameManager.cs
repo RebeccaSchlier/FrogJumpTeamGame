@@ -67,6 +67,14 @@ public class GameManager : MonoBehaviour
          
     }
 
+    IEnumerator SpawnObstacle()
+    {
+        while (isGameActive)
+        {
+            yeild return ne Wai
+        }
+    }
+
     public void UpdateScore (int scoreToAdd)
     {
         score += scoreToAdd;

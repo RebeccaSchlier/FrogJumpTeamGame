@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2522151500292333744}
   - component: {fileID: 128556604085496128}
   - component: {fileID: 6959259122666826180}
+  - component: {fileID: -1263773574247231649}
   m_Layer: 0
   m_Name: FrogGameObstacle1
   m_TagString: Bad
@@ -182,3 +183,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointValue: 0
   lifeText: {fileID: 0}
+--- !u!114 &-1263773574247231649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391783147705435023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3386ff11c1d2047c1b27e655d208b2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

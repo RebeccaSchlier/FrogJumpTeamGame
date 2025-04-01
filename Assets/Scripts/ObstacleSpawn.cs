@@ -11,7 +11,7 @@ public class ObstacleSpawn : MonoBehaviour
     private PlayerController playerControllerScript;
     private int randomObstacle;
     public float speed = 30f;
-    public float leftBounds = -15f;
+    public float leftBounds = -6f;
 
     // Start is called before the first frame update
    void SpawnObstacle ()

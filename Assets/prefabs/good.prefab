@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4190570846463343413}
   - component: {fileID: 7676418341348113573}
   - component: {fileID: 6509322727382715748}
+  - component: {fileID: 307045258647910732}
   - component: {fileID: -3151636336554597372}
   m_Layer: 0
   m_Name: good
@@ -134,6 +135,33 @@ PolygonCollider2D:
       - {x: 0.49910372, y: -0.2845633}
       - {x: -0.49283677, y: -0.27464893}
   m_UseDelaunayMesh: 0
+--- !u!50 &307045258647910732
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212863114591111586}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0.1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &-3151636336554597372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad83bf3302f472cb155952d88d98fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointValue: 0
+  yRange: 1
+  xPos: 17
+  pointValue: 1
   explosionParticle: {fileID: 0}
   lifeText: {fileID: 0}

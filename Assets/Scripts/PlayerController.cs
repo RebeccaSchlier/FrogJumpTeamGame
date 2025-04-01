@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float gravityModifier;
     public bool isOnGround;
+    public GameManager gameManager;
     // public collision ground;
     public bool gameOver;
 
@@ -124,11 +125,33 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
 
-            Debug.Log("Game Over!");
+            gameManager.UpdateLives(-1);
+            Destroy(gameObject);
            
+        }
+        else if (collision.gameObject.CompareTag("Fly"))
+        {
+            gameManager.UpdateScore(+3);
+            Destroy(gameObject);
         }
 
     }
+
+    // private void TongueOut()
+    // {
+    //     if (gameManager.isGameActive)
+    //     { if (Input.GetKey(KeyCode.Z))
+    //         {Destroy(gameObject);
+    //         gameManager.UpdateScore(pointValue);
+
+    //         if (gameObject.CompareTag("Bad") && gameManager.isGameActive)
+    //         {
+    //             gameManager.UpdateLives(-1);
+           
+    //         } 
+    //         }
+    //     }
+    // }
 
 }
 
